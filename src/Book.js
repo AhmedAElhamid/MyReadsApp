@@ -10,7 +10,6 @@ class Book extends Component{
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(e){
-    console.log(e.target.value);
     let book = this.state.book
     book.shelf = e.target.value
     this.setState({
@@ -42,7 +41,7 @@ class Book extends Component{
           </div>
         </div>
         <div className="book-title">{this.state.book.name}</div>
-        <div className="book-authors">{this.state.book.name}</div>
+        <div className="book-authors">{this.state.book.author}</div>
       </div>
     )
   }

@@ -31,7 +31,9 @@ export const update = (book, shelf) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ shelf })
-  }).then(res => res.json())
+  })
+  .then(res => res.json())
+  .then(data => data.books)
 
 export const search = (query) =>
   fetch(`${api}/search`, {
@@ -41,5 +43,18 @@ export const search = (query) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ query })
-  }).then(res => res.json())
-    .then(data => data.books)
+  })
+  .then(res => res.json())
+  .then(data => data.books)
+// export const search = (query) =>
+//   console.log(`sending query ${query} to the server`);
+//   fetch(`${api}/search`, {
+//     method: 'POST',
+//     headers: {
+//       ...headers,
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ query })
+//   })
+//   .then(res => res.json())
+//   .then(data => data.books)
